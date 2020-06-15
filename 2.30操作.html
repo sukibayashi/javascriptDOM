@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>2.3操作</title>
+</head>
+
+<body>
+    <!-- 2.3操作 -->
+    <!-- 用JavaScript做一些有用的工作， 还需要能够进行计算和处理数据。也就是需要完成一些操作（operation） -->
+
+    <!-- 算术操作符号 -->
+    <!-- 加法是一种操作， 减法、除法和乘法也是。这些算术操作（arithmetic operation）中的每一种都必须借助于相应的操作符（operator）才能完成。 -->
+    <!-- 操作符是 JavaScript为完成各种操作而定义的一些符号。例如赋值时所使用的等号（=）。加法操作的是加号（x）...-->
+    <!-- 下面是简单的加法操作 -->
+    <script>
+        1 + 4
+        // 还可以把多种操作组合在一起
+        1 + 4 * 5
+        // 为避免产生歧义，可以用括号把不同的操作分割开来：
+        1 + (4 * 5)
+            (1 + 4) * 5
+        // 变量可以包含操作 :
+        var total = (1 + 4) * 5;
+        // 不仅如此, 还可以对变量进行操作:
+        var temp_fahrenheit = 95;
+        var temp_celsius = (temp_fahrenheit - 32) / 1.8;
+        // JavaScript 还提供一些非常有用的操作符作为各种常用操作的缩写. 例如, 如果想给一个数值变量加上1 , 可以使用如下所示的语句:
+        year = year + 1;
+        // 也可以使用++操作符来达到同样的目的:
+        yaer++;
+        // 类似的, --操作符将对一个数值变量的值进行减1操作
+        // 加好(+)是一个比较特殊的操作符, 它既可以用于数值, 也可以用于字符串. 把两个字符串合二为一是一种很直观易懂的操作:
+        var message = "i am feeling" + "happy";
+        // 像这样把多个字符串首尾相连在一起的操作叫做拼接(concatenation).这种拼接也可以通过变量来完成:
+        var mood = "happy";
+        var message = "i am feeling" + mood;
+        // 甚至可以把数值和字符串拼接腻在一起. 因为JavaScript是一种弱类型语言, 所以这种操作是允许的. 此时, 数值将会被自动转换成字符串:
+        var year = 2005;
+        var message = "The year is " + year;
+        // 如果把字符串和数值拼接在一起, 其结果将是一个更长的字符串; 但如果用同样的操作符来"拼接"两个数值, 其结果将是两个数值的算术和. 对比下面两条alert语句的执行结果:
+        
+        alert("10"+20);
+        // 返还字符串"1020"
+
+        alert(10 + 20);
+        // 返还数值30
+
+        // 另一个快捷操作符是+=, 它可以一次完成"加法和赋值"(或是"拼接"和"赋值")操作:
+        var year = 2010;
+        var message = "the year is";
+        message += year;
+        // 执行完上面这些语句后， 变量message的值将是“the year is 2010",
+        alert(message);
+    </script>
+</body>
+
+</html>
