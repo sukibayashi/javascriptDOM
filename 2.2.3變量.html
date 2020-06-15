@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.2.3變量</title>
+</head>
+<body>
+    <script>
+        // 在JavaScript 腳本中, 如果程序員在對某個變量賦值之前未聲明, 賦值操作將自動聲明該變量. 
+        // 但提前聲明變量是一種良好的編程習慣, 下面的語句對變量 mood 和 age 做出了聲明: 
+        var mood;
+        var age;
+    </script>
+
+    <script>
+        // 一石二鳥, 把聲明和變量和對該變量賦值一次完成:
+        var modd = "happy";
+        var age = 33;
+    </script>
+
+    <script>
+        // 這一條語句的效果相當於下面這些語句的總和: 
+        var mood, age;
+        mood = "happy";
+        age = 33;
+    </script>
+
+    <script>
+        // JavaScript 語法不允許變量名中包含空格或標點符號 (美元符號 "$" 例外) . 下面這條語句將導致錯誤
+        var my mood = "happy";
+    </script>
+
+    <script>
+        // JavaScript 變量名中允許包含數字/字母/美元符號和下劃線 (但第一個字符不允許是數字). 為了讓比較長的變量名更容易閱讀, 可以在變量名中適當位置插入下劃線, 就像這樣
+        var my_mood = "happy";
+    </script>
+
+    <script>
+        // 另一種方式是使用駝峰格式 (camel case), 刪除中間的空白 (下劃線), 後面的每個新單詞改用大寫字母開頭: 
+        var myMood = "happy";
+        // 通常駝峰格式是函數名/ 方法名和對象屬性名命名的首選格式.
+    </script>
+</body>
+</html>

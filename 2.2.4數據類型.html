@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.2.4數據類型</title>
+</head>
+<body>
+    <!-- 1.字符串 -->
+    <script>
+        // 接下來, 一起複習 JavaScript 中最重要的幾種數據類型.
+        // 字符串由零個或多個字符組成. 字符不包括 (但不限於)字母/ 數字 / 標點符號和空格. 字符串必須包在引號裡, 單引號或雙引號都可以.
+        var mood = 'happy';
+        var modd = "happy";
+    </script>
+
+    <script>
+        // 你可以隨意選用引號, 但最好是根據字符串所包含的字符來選擇. 如果字符串包含雙引號, 就把整個字符串放在單引號裡; 如果字符串包含單引號, 就把整個字符串放在雙引號裡: 
+        var mood = "don't ask";
+    </script>
+
+    <script>
+        // 如果你想在上面這條語句中使用單引號, 就必須保證字母 "n" 和 "t" 之間的單引號能被單成這個字符串的一部分. 這個情況下這個單引號需要被看作一個普通字符, 而不是這個字符串的結束標誌. 這種情況我們需要對這個字符進行轉義 (escaping) . 在 JavaScript裡用反斜線對字符進行轉義:
+        var mood = 'don\'t ask';
+        // 儘量使用雙引號包住字符串, 做為一個好的編程習慣, 不管選擇用雙引號還是單引號, 請在整個腳本中保持一致. 
+    </script>
+
+    <!-- 2.數值 -->
+    <script>
+        // 如果想給一個變量賦一個數值, 不用限定它必須是一個整數. JavaScript 允許使用帶小數點的數值, 並且允許任意位小數, 這樣的數為浮點數 (floating-point number):
+        var age =33.25;
+    </script>
+
+    <script>
+        // JavaScript也支持負數浮點數:
+        var temperature = -20.333333
+    </script>
+
+    <!-- 3.布爾值 -->
+    <script>
+        // 另一種重要的數據類型是布爾(boolean)類型
+        // 布爾數據只有兩個可選值----ture或 false. 假設需要這樣的一個變量: 如果我在睡覺, 這個變量將存儲一個值; 如果我沒在睡覺, 這個變量將存儲另一個值. 可以用字符串將數據類型變量賦值為 
+        // "sleep" 或 "not sleeping", 但使用布爾數據類型顯然是一個更好的選擇:
+        var sleeping = true;
+
+        // 從某種意義上, 為計算機設計程序就是與布爾值打交道. 作為最基本的事實, 所有電子電路只能識別和使用布爾數據. 不管使用術語 true 和 false/ yes 和 No 或者 1 和 0, 重要的是只能取兩種可取值中的一種.
+        // 布爾值不是字符串, 千萬不要把布爾值用引號括起來.
+
+        // 把變量married設置為布爾值 true
+        var married = true;
+        // 把變量married設置為字符串 true
+        var married = "true "
+    </script>
+</body>
+</html>

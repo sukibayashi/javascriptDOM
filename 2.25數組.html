@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.25數組</title>
+</head>
+<body>
+    <!-- 數組 -->
+    <!-- 字符串/數值和布爾值都是標量( scalar ). 如果某個變量是標量, 它在任意時刻就只能有一個值. 如果想用一個變量來存儲一組值, 就需要使用數組( array ) -->
+    <!-- 數組是指用一個變量表示一個值得集合, 集合中的每個值都是這個數組的一個元素( element ). -->
+    <!-- 在JavaScript中, 數組可以用關鍵字 Array聲明. 聲明數組的同時還可以指定數組初始元素個數, 也就是這個數組的長度 (length) -->
+
+    <script>
+        var beatles = Array(4);
+    </script>
+
+    <!-- 有時, 我們無法預知某個數組有多少個元素. JavaScript 根本不要求在聲明數組時必須給出元素個數, 我們完全可以在聲明數組時不給出元素個數 -->
+    <script>
+        var beatles = Array();
+    </script>
+
+    <!-- 向數組中添加元素的操作成為填充( populating ). 在填充數組時, 不僅需要給出新元素的值, 還需要給出新元素在數組中的存放位置, 這個位置就是這個元素的下標(index). 數組裡一個元素一個下標.下標必須用方括號括起來 -->
+    <script>
+        array[index] = element;
+    </script>
+
+    <script>
+        // 用0而不是1作為第一個下標, 這是JavaScript世界裡的一條規則.
+        beatles[0] = "John";
+
+        // 下面是聲明Beatles數組的全過程:
+        var beatles = Array(4);
+        beatles[0] = "John";
+        beatles[1] = "Paul";
+        beatles[2] = "George";
+        beatles[3] = "Ringo";
+
+        // 注意: beatles數組的長度是4, 但它最後一個元素的下標卻是3. 因為數組的下標是從0開始記數的.
+        // 另一種相對簡單的方式(這種方式要求用逗號把各個元素隔開):
+        var beatles = Array["John", "Paul", "George", "Ringo"];
+
+        // 數組元素不必非得是字符串, 可以把一些布爾值存入一個數組, 還可以把一組數值存入一個數組:
+        var years = [ 1940, 1941, 1942, 1943];
+        // 還可以把3種數據類型都混合存入一個數組:
+        var lennon = ["John", 1940, false];
+
+        // 數組元素還可以是變量
+        var name = "John";
+        beatles[0] = name;
+
+        // 數組元素的值還可以是另一組數組的元素. 下面兩句把beatles數組的第二個元素賦值為"Paul";
+        var names = ["Ringo", "John", "George", "Paul"];
+        beatles[1] = names[3];
+
+        // 數值還可以包含其他的數組, 數組中的任何一個元素都可以把一個數組作為它的值:
+        var lennon = ["John", 1940, false];
+        var beatles = [];
+        beatles[0] = lennon;
+        // 這樣就會是beatles[0][0]的值是"John", beatles[0][1]的值是1940, beatles[0][2]的值是 false
+    </script>
+
+    <!-- 關聯數組 -->
+    <!-- 每個元素的下標是一個數字, 每增加一個元素, 這個數字就會依次增加1. 第一個元素的下標是0, 第二個元素的下標是1, 以此類推 -->
+
+    <!-- 如果在填充數組時只給除了元素的值, 這個數組就將時一個傳統數組, 它的各個元素的下標將被自動創建和刷新 -->
+    <!-- 可以通過在填充數組時為每個新元素明確的給出下標來改變這種默認的行為. 在為新元素給出下標時, 不必侷限於使用整數數字. 也可以使用字符串 -->
+
+    <script>
+        // 這樣的數組叫做關聯數組. 由於可以使用字符串來代替數字值, 因而代碼更具有可讀性.但, 這種用法並不是一個好習慣, 不推薦大家使用
+        // 本質上, 在創建關聯數組時, 你創建的是Array對象的屬性. 在 JavaScript中, 所有的變量實際上都是某種類型的對象.
+        // 在上面這個例子中, 你實際上給 lennon數組添加了 name, year 和 living 三個屬性. 理想情況下, 你不應該修改 Array對象的屬性, 而應該使用通用的對象( Object ).
+        var lennon = Array();
+        lennon["name"] = "John";
+        lennon["year"] = 1940;
+        lennon["living"] = false;
+    </script>
+</body>
+</html>

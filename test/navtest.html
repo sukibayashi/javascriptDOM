@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .nav {
+            /* Basic stuff for making the nav fullscreen */
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+        }
+
+        .nav__container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* The main point: */
+            overflow-y: auto;
+            /* Optional but highly reccomended: enables momentum scrolling on iOS */
+            -webkit-overflow-scrolling: touch;
+        }
+
+        html {
+            /* For desktop */
+            overflow: hidden;
+        }
+
+        body {
+            overflow: visible;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- This will be element to which we add a class "open" whenever the hamburger button will be clicked -->
+    <nav class="nav">
+        <div class="nav__container">
+            <div class="woshisb">123</div>
+        </div>
+    </nav>
+
+    <script>
+        $('.hamburger').click(function () {
+            var self = $(this);
+
+            self.toggleClass('open');
+            $('.nav').toggleClass('open');
+
+            if (self.hasClass('open')) {
+                $('html, body')
+                    // Needed to remove previously bound handlers
+                    .off('touchstart touchmove')
+                    .on('touchstart touchmove', function (e) {
+                        e.preventDefault();
+                    });
+            } else {
+                $('html, body')
+                    .off('touchstart touchmove')
+                    .on('touchstart touchmove', function (e) { });
+            }
+        });
+    </script>
+</body>
+
+</html>

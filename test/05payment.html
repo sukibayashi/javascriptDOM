@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05payment</title>
+
+    <style>
+        .tablepayment,
+        .paymentTHpay,
+        .paymentTH,
+        .paymentTd {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .paymentTH,
+        .paymentTd {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .paymentTHpay {
+            width: 360px;
+        }
+
+        .tabledeposit {
+            display: flex;
+            height: 65px;
+            align-items: center;
+            padding: 5px;
+        }
+
+        .creditcard01IMG {
+            width: 200px;
+        }
+
+        .creditcard01 {
+            position: relative;
+            right: 4px;
+        }
+
+        .creditcard02 {
+            width:140px;
+            position: relative;
+            left: 6px;
+        }
+
+        .tablePayways {
+            display: flex;
+            height: 60px;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .tablePayways01 {
+            position: relative;
+            right: 24px;
+        }
+
+        .virtualCurrency02 {
+            position: relative;
+            right: 12px;
+        }
+
+        .tablePaywaysIMG {
+            width: 200px;
+        }
+
+        .ecoPayz02 {
+            position: relative;
+            right: 15px;
+        }
+
+        .sticPay02 {
+            position: relative;
+            right: 11px;
+        }
+
+        .venusPoint02 {
+            position: relative;
+            right: 9px;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="tablepayment">
+        <tr>
+            <th class="paymentTHpay">決済方法</th>
+            <th class="paymentTH">入金</th>
+            <th class="paymentTH">出金</th>
+            <th class="paymentTH">入金額</th>
+            <th class="paymentTH">出金額</th>
+            <th class="paymentTH">事務手数料</th>
+        </tr>
+        <tr>
+            <td class="paymentTd">
+                <div class="tablePayways">
+                    <div class="creditcard01">
+                        <img class="creditcard01IMG"
+                            src="https://youscasino-blog.com/wp-content/uploads/2020/06/visa-master-jcb-eyecatch.png"
+                            alt="">
+                    </div>
+                    <div class="creditcard02">クレジットカード</div>
+                </div>
+            </td>
+            <td class="paymentTd">◎</td>
+            <td class="paymentTd">×</td>
+            <td class="paymentTd">
+                <div class="deposit01">$100 ~ $2,000 / 1回</div>
+                <div class="deposit02">$100 ~ $10,000 / 月</div>
+            </td>
+            <td class="paymentTd">×</td>
+            <td class="paymentTd">5%</td>
+        </tr>
+        <tr>
+            <td class="paymentTd">
+                <div class="tablePayways">
+                    <div class="tablePayways01">
+                        <img class="tablePaywaysIMG"
+                            src="https://youscasino-blog.com/wp-content/uploads/2020/06/virtualCurrencylogo.png" alt="">
+                    </div>
+                    <div class="virtualCurrency02">仮想通貨</div>
+                </div>
+
+            </td>
+            <td class="paymentTd">◎</td>
+            <td class="paymentTd">◎</td>
+            <td class="paymentTd">$20 ~</td>
+            <td class="paymentTd">$20 ~</td>
+            <td class="paymentTd">
+                <div class="deposit01">入金: 無料</div>
+                <div class="deposit02">出金: 無料</div>
+            </td>
+        </tr>
+        <tr>
+            <td class="paymentTd">
+                <div class="tablePayways">
+                    <div class="tablePayways01">
+                        <img class="tablePaywaysIMG"
+                            src="https://youscasino-blog.com/wp-content/uploads/2020/06/ecoPayz-logo.png" alt="">
+                    </div>
+                    <div class="ecoPayz02">ecoPayz</div>
+                </div>
+
+            </td>
+            <td class="paymentTd">◎</td>
+            <td class="paymentTd">◎</td>
+            <td class="paymentTd">$20 ~</td>
+            <td class="paymentTd">$20 ~</td>
+            <td class="paymentTd">
+                <div class="deposit01">入金: 無料</div>
+                <div class="deposit02">出金: 無料</div>
+            </td>
+        </tr>
+        <tr>
+            <td class="paymentTd">
+                <div class="tablePayways">
+                    <div class="tablePayways01">
+                        <img class="tablePaywaysIMG"
+                            src="https://youscasino-blog.com/wp-content/uploads/2020/06/sticpayLogo.png" alt="">
+                    </div>
+                    <div class="sticPay02">STICPAY</div>
+                </div>
+
+            </td>
+            <td class="paymentTd">◎</td>
+            <td class="paymentTd">◎</td>
+            <td class="paymentTd">$20 ~</td>
+            <td class="paymentTd">$20 ~</td>
+            <td class="paymentTd">
+                <div class="deposit01">入金: 無料</div>
+                <div class="deposit02">出金: 無料</div>
+            </td>
+        </tr>
+        <tr>
+            <td class="paymentTd">
+                <div class="tablePayways">
+                    <div class="tablePayways01">
+                        <img class="tablePaywaysIMG"
+                            src="https://youscasino-blog.com/wp-content/uploads/2020/06/venusPointlogo.png" alt="">
+                    </div>
+                    <div class="venusPoint02">Venus Point</div>
+                </div>
+
+            </td>
+            <td class="paymentTd">◎</td>
+            <td class="paymentTd">◎</td>
+            <td class="paymentTd">$20 ~</td>
+            <td class="paymentTd">$20 ~</td>
+            <td class="paymentTd">
+                <div class="deposit01">入金: 無料</div>
+                <div class="deposit02">出金: 無料</div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
