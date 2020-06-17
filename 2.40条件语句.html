@@ -9,6 +9,31 @@
     <script>
         // 脚本的真正威力体现在根据人们给出的各种条件做出决策.
         // JavaScript使用条件语句(conditional statement)来做判断.
+        // 在解释脚本时，浏览器将依次执行这个脚本中的各个条件语句，我们可以在这个脚本中用条件语句来设置一个条件，只有满足了这一个条件才能让更多的语句得到执行。
+        // 最常见的条件语句是 if语句，下面是if语句的基本语法：
+        if (condition){
+            statements;
+        }
+        // 条件必须放在 if 后面的圆括号中。条件的求值结果永远是一个布尔值，即只能是 ture 或 false。花括号中的语句——不管他们有多少条，只有在给定条件的求值结果是 ture的情况下才会执行。
+        // 因此，下面这个例子中的 alert消息永远不会出现
+        if (1 > 2){
+            alert ("The world has gone mad!");
+        }
+        // 因为 1 不可能大于 2， 所以上面这个条件的值永远是 false。
+    </script>
+
+    <script>
+        // 在这条 if 语句中， 我们有意把所有的东西都放在花括号里。 这并不是 JavaScript 的一项语法要求，我们这么做是为了让代码更容易阅读
+        // 事实上，if 语句中的花括号并不是必不可少的。如果if语句中的花括号部分只包含着一条语句的话，那就可以不使用花括号，而且if语句的全部内容可以写在同一行上：
+        if (1 > 2)alert("The world has gone mad!");
+        // 因为花括号可以提高脚本的可读性，所以在 if 语句中总是使用花括号是个好习惯。
+        // if 语句可以有一个 else 语句，包含在 else 字句中的语句会在给定条件为假时执行：
+        if (1 > 2){
+            alert("The world has gone mad!");
+        } else {
+            alert("All is well with the world");
+        }
+        // 因为给定条件“1 > 2”的值为假（false），所以我们将看到 else 的 alert
     </script>
 </body>
 </html>

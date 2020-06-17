@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.41比较操作符</title>
+</head>
+<body>
+    <script>
+        // JavaScript 还提供了许多几乎只能用在条件语句里的操作符，其中包括诸如大于（>）、小于（<）、大于或等于（>=）、小于或等于（<=）之类的比较操作符
+        // 如果想比较两个值是否相等，可以使用“等于（==）”比较操作符
+        // 单个等号（=）适用于完成赋值操作
+        // 如果在条件语句中的某个条件里只用了单个等号，那么只要相应的赋值操作取得成功，那个条件的求值结果就将是 true
+        
+        // 错误的“等于”比较示范
+        var my_mood = "happy";
+        var your_mood = "sad";
+        if (my_mood = your_mood){
+            alert("We both feel the sam.");
+        }
+        // 上面这条语句的错误之处在于，它是把变量 your_mood赋值给变量 my_mood，而不是在比较它们是否相等。因为这个赋值操作总会成功，所以这个条件语句的结果将永远是 true。
+
+        // 正确的“等于”比较做法
+        var my_mood = "happy";
+        var your_mood = "sad";
+        if (my_mood == your_mood){
+            alert("We both feel the same.");
+        }
+        // 这次，条件语句的结果是 false。
+        // JavaScript 还提供一个来进行“不等于”比较的操作符，它由一个感叹号和一个等号构成（!=）。
+        if (my_mood != your_mood){
+            alert("We're feeling different moods.");
+        }
+
+        //相等操作符==并不表示严格相等，这一点很容易让人犯糊涂。例如，比较 false 与一个空字串会得到什么结果？
+        var a = false;
+        var b = "";
+        if (a == b){
+            alert("a equls b");
+        }
+        // 这个条件语句的求值结果是 true, 是因为相等操作符==认为空字符串与 false 的含义相同。 要进行严格比较，就要使用另一种符号 （===）
+        // 
+    </script>
+</body>
+</html>
