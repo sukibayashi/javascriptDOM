@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.42逻辑操作符</title>
+</head>
+
+<body>
+    <!-- JavaScript 允许把条件语句里的操作组合在一起. 例如, 如果想检查某个变量, 不妨假设这个变量的名字是 Num, 它的值是不是在 5~10之间, 我们将需要进行两次比较操作 -->
+    <!-- 首先, 比较这个变量是否大于或等于5; 然后, 比较这个变量是否小于或等于 10. -->
+    <!-- 两次比较操作成为逻辑比较 ( operand ). -->
+    <script>
+        if (num >= 5 && num < 10) {
+            alert("The number is in the right range.");
+        }
+        // 这里使用了 "逻辑与" 操作符, 它由两个 "&" 字符构成 "&&", 是一个逻辑操作符.
+        // 逻辑操作符的操作对象是布尔值. 每个逻辑操作数返回一个布尔值 true 或是 false. "逻辑与" 操作只有在它的两个操作数都是 true时才会是 true.
+        // "逻辑或" 操作符由两个垂直线字符构成 (||). 只要它的操作数中有一个 true, "逻辑或" 操作就将是 true. 只有当它的两个操作数都是 false 时, "逻辑或" 操作才会是 false.
+        if (num > 10 || num < 5) {
+            alert("The number is not in the right range.");
+        }
+        // JavaScript 还提供了一个 "逻辑非" 操作符, 它由一个感叹号 (!) 单独构成. "逻辑非"操作符只能作用于单个逻辑操作数, 其结果是把那个逻辑操作数所返回的布尔值取反.
+        // 如果那个逻辑操作数所返回的布尔值是 true， "逻辑非" 操作符将把它取反位 false;
+        if (!(1 > 2)) {
+            alert("All is well with the world");
+        }
+        // 请注意, 为避免产生歧义,上面这条语句把逻辑操作数放在了括号里,因为我想让 "逻辑非" 操作符作用于括号里的所有内容.
+        // 可以用 "逻辑非" 操作符把整个条件语句的结果颠倒过来. 下面例子, 特意使用了一对括号来确保 "逻辑非" 操作符将作用于两个逻辑操作数的组合结果:
+        if (!(num > 10 || num < 5)){
+            alert("The number is in the right range.");
+        }
+    </script>
+</body>
+
+</html>

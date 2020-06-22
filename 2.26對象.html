@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2.26對象</title>
 </head>
+
 <body>
     <!-- 2.26對象 -->
-    <!--  -->
+    <script>
+        // 与数组类似, 对象也是使用一个名字表示一组值. 对象的每个值都是对象的一个属性. 例如, 前一节的 lennon 数组也可以创建成下面这个对象:
+        var lennon = Object();
+        lennon.name = "John";
+        lennon.year = 1940;
+        lennon.living = false;
+        // 与使用 Array 类似, 创建对象使用 Object 关键字. 它不使用方括号和下标来获取元素. 而是像任何 JavaScript 对象一样, 使用点号来获取属性.
+        // 创建对象还有一种更简洁的语法, 即花括号语法
+        { propertyName: value, propertyName: value }
+
+        // lennon 对象也可以写成下面这样:
+        var Lennon = { name: "John", year: 1940, living: false };
+
+        // -------------------- 旧版 -------------------- 
+        // 數值還可以包含其他的數組, 數組中的任何一個元素都可以把一個數組作為它的值:
+        var lennon = ["John", 1940, false];
+        var beatles = [];
+        beatles[0] = lennon;
+        beatles[0][2]
+        // 這樣就會是beatles[0][0]的值是"John", beatles[0][1]的值是1940, beatles[0][2]的值是 false
+        // -------------------- 旧版 -------------------- 
+
+        // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ 比较 ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+
+        // 属性名与 JavaScript 变量的命名规则有相同之处, 属性值可以是任何 JavaScript 值, 包括其他对象.
+        // 用对象来代替传统数组的做法以为着可以通过元素的名字而不是下标数字来引用它们. 这大大提高了脚本的可续性.
+        // 创建一个新的 Beatles 数组, 并用刚才创建的 lennon 对象来填充它的第一个元素.
+        var Lennon = { name: "John", year: 1940, living: false };
+        var beatles = Array();
+        beatles[0] = lennon;
+        beatles[0].name
+        // 现在我们不需要多数就可以获得想要的元素, 不能使用beatles[0][0] 而是使用 beatles[0].name 就能得到值 "John".
+        // 在此基础上, 还可以做进一步改进: 把 beatles 数组也声明为对象而不是传统数组. 这样一来, 我们就可以用 "drummer" 或 "bassist" 等更有意义且更容易记忆的字符串值----而不是一些枯燥乏味的证书----作为下标去访问这个数组里的元素了:
+        var beatls = {};
+        beatles.voclist = lennon;
+        beatles.vocalist.name
+        // beatles.vocalist.name的值是 "John", beatles.vocalist.year 的值是 1940, beatles.vocalist.living的值是 false.
+    </script>
 </body>
+
 </html>
