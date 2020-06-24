@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.52for循环</title>
+</head>
+
+<body>
+    <script>
+        // 用 for 循环来重复执行一些代码也很方便，它类似于 while 循环。事实上，for 循环只是刚才介绍的 while 循环的一种变体。
+        initialize;
+        while (condition) {
+            statements;
+            increment;
+        }
+        // 而 for 循环不过是进一步改写为如下所示的紧凑形式：
+        for (inital condition; test condition; alter condition) {
+            statements;
+        }
+        // 用 for 循环来重复执行一些代码的好处是循环结构更加清晰。与循环结构有关的所有内容都包含在 for 语句的圆括号部分
+        for (var count = 1; count < 11; count++) {
+            alert(count);
+        }
+        // 与循环有关的所有内容都包含在 for 语句的圆括号里。当我们把一些代码放在花括号中间的时候，我们清楚的知道哪些代码将会执行 10 次。
+        // for 循环最常见的用途之一是对某个数组里的全体元素进行遍历处理。这往往需要用到数组的 array.length 属性，这个属性可以告诉我们在给定数组里的元素的个数。
+        // 记住数组下标从 0 而不是 1 开始。
+        var beatles = Array("John", "Paul", "George", "Ringo");
+        for (var count = 0; count < beatles.length; count++) {
+            alert(beatles[count]);
+        }
+
+        // 运行这段代码，将看到 4 条 alert 消息，它们分别对应着 Beatles 乐队的四位成员。
+    </script>
+</body>
+
+</html>

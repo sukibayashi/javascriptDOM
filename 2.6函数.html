@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.6函数</title>
+</head>
+
+<body>
+    <script>
+        // 如果需要多次使用同一段代码，可以把它们封装成一个函数。
+        // 函数（function）就是一组允许在你的代码里随时调用的语句。事实上，每一个函数实际上是一个短小的脚本。
+        // 作为一种良好的变成习惯，应该现对函数做出定义再调用它们。
+        function shout() {
+            var beatles = Array("John", "Paul", "George", "Ringo");
+            for (var count = 0; count < beatles.length; count++) {
+                alert(beatles[count]);
+            }
+        }
+
+        // 这个函数里的循环语句将依次弹出对话框来显示 Beatles 乐队成员的名字。现在，如果想在自己的脚本里执行这一动作，可以随时使用如下语句来调用这个函数：
+        shout();
+        // 每当需要反复做一件事时，都可以利用函数来避免重复键入大量的相同内容。不过，函数的真正威力体现在，你可以把不同的数据传递给它们，而它们将使用这些数据去完成预定的操作。
+        // 我们把传递给函数的数据称为参数
+    </script>
+</body>
+
+</html>
