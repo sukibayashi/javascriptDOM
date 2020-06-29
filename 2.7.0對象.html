@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.70對象</title>
+</head>
+<body>
+    <!-- 對象(object)是一種非常重要的數據類型, 但此前我們還沒有認真對待它. 對象是自包含的數據集合, 包含在對象里的數據可以通過兩種形式訪問----屬性(property)和方法(method) -->
+    <!-- 1. 屬性是隸屬於某個特定對象的變量;
+         2. 方法是只有某個特定對象才能調用的函數 -->
+    <!-- 對象就是有一些屬性和方法組合在一起而構成的一個數據實體
+    在 JavaScript 里, 屬性和方法都是用 "點" 語法來訪問: -->
+
+    <script>
+        Object.property
+        Object.method()
+
+        // 你已經見過如何用 mood 和 age 等變量來存放諸如 "心情" 和 "年齡" 之類的值. 如果它們是某個對象的屬性----這裡不妨假設那個對象的名字是 Person, 我們就必須使用如下所示的記號來使用它們:
+        Person.mood
+        Person.age
+        // 假如 Person 對象還關聯著一些諸如 walk() 和 sleep()之類的函數, 這些函數就是這個對象的方法, 而我們必須使用如下所示的記號來訪問它們:
+        Person.walk()
+        Person.sleep()
+        
+
+        // 把這些屬性和方法全部集合在一起, 我們就得到了一個 Person 對象
+        // 為了使用 Person 對象來描述一個特定的人, 需要創建一個 Person 對象的實例 (instance).實例是對象的具體個體.
+        // 例: 你和我都是人, 都可以用 Person 對象來描述; 但你和我是兩個不同的個體, 很可能有著不同的屬性( 例如, 你和我的年齡可能不一樣). 因此你和我對應著兩個不同的 Person 對象----它們雖然都是 Person 對象, 但它們是兩個不同的實例.
+        // 為給定對象創建一個新實例需要使用 new 關鍵字，如下所示：
+        var jeremy = new Person;
+        // 上面這條語句將創建出 Person 對象的一個新實例 jeremy. 我們就可以像下面這樣利用 Person 對象的屬性來檢索關於 jeremy 的信息了:
+        jeremy.age
+        jeremy.mood
+
+        // 對象、屬性、方法和實例等概念比較抽象, 為了對這些概念有一個直觀的認知, 在這裡用虛構的 Person 對象作為例子. 
+        // JavaScript 里並沒有 Person 對象. 我們可以利用 JavaScript 來創建自己的對象----術語為用戶定義對象 (user-defined object). 這是一個相當高級的主題, 我們眼下還無需對它做進一步討論.
+        // JavaScript提供了一系列預先定義好的對象, 這些可以拿來就用的對象稱為內建對象 (native object).
+    </script>
+</body>
+</html>
