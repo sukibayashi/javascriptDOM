@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.4.4CSS</title>
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <script>
+        // DOM 并不是与网页结构打交道的唯一技术. 我们还可以通过 CSS (层叠样式表) 告诉浏览器应该如显示一份文档的内容.
+        // 类似 JavaScript 脚本, 对样式的声明既可以嵌在文档的 <head> 部分 (<style>标签之间), 也可以放在另外一个样式表文件里.
+        // CSS 声明元素样式的语法与 JavaScript 函数的定义语法很相似:
+        // .selector {
+        //      property: value;
+        // }
+
+        // 在样式声明里, 我们可以定义浏览器在现实元素时使用的颜色、字体和字号:
+        // p {
+        //      color: yellow;
+        //      font-family: "arial", serif;
+        //      font-seize: 1.2em;
+        // }
+
+        // 继承 (inheritance) 是 CSS 技术中的一项强大功能. 类似于 DOM, CSS 也把文档的内容视为一颗节点数.节点数上的各个元素将继承其父元素的样式属性.
+        // 如果我们为 body 元素定义了一些颜色或字体, 包含在 body 元素里的所有元素都将自动获得那些样式:
+        // body {
+        //      color: white;
+        //      background-color: black;
+        // }
+
+        // 这些颜色将不仅作用于那些直接包含在 <body> 标签里的内容, 还将作用域嵌套在 body 元素内部的所有元素.
+        // 在某些场合, 当把样式应用于一份文档时, 我们其实只想让那些样式作用于某个特定元素.
+        // 为了获得如此精细的控制, 需要在文档里插入一些能够把这段文本域其他段落区别开来的特殊标志.
+        // 为了把某一个或某几个元素于其他元素区别开来, 需要使用 class 属性或 id 属性.
+    </script>
+
+    <!-- 1. Class 属性 -->
+    <script>
+        // 可以在所有的元素上任意使用 class 属性:
+        // <p class = "special">This paragraph has the special class </p>
+        // <h2 class = "special">So does this headline </h2>
+
+        // 在样式表里, 可以像下面这样为 class 属性值相同的所有元素定义同一种样式:
+        // .special{
+        //      font-style: italic;
+        //  }
+    </script>
+
+    <!-- 2. id 属性 -->
+    <script>
+        // id 属性的用途是给网页里的某个元素加上一个独一无二的标识符
+        // < ul id = "purchases" >
+        // 在样式表里, 可以为下面这样的特定 id 属性值的元素定义一种独享的模式
+        // #purchases {
+        //      border: 1px solid white;
+        //      background-color: #333;
+        //      padding: 1em;
+        // }
+
+        // 尽管 id 本身只能使用一次, 样式表还是可以利用 id 属性为包含在特定元素里的其他元素定义样式.
+        // id 属性就像是一个挂钩, 它一头连着文档里的某个元素, 另一头连着 CSS 样式表里的某个样式. DOM 也可以使用这种挂钩.
+    </script>
+</body>
+</html>
