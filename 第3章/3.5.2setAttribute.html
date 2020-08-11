@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.5.2setAttribute</title>
+</head>
+
+<body>
+    <!-- 之前所學的方法大多數用來獲取訊息 -->
+    <!-- setAttribute(): 它允許我們對屬性節點的值做出修改, 與getAttribute一樣, setAttribute 也只用於元素節點 -->
+    <h1>What to buy</h1>
+    <p title="a gentle reminder">Dont forget to buy this stuff.</p>
+    <p>This is just a test</p>
+    <ul id="purchases">
+        <li>A tin of beans</li>
+        <li class="sale">Cheese</li>
+        <li class="sale important">Milk</li>
+    </ul>
+
+    <script>
+        // object.setAttribute(attribute,value)
+    </script>
+
+    <!-- 找到id為purchase的元素, 并把這個元素的title屬性值設置為 a list of goods -->
+    <script>
+        // setAttribute 實際完成了兩項操作: 先創建這個屬性, 然後設置它的值. 如果 setAttribute 用在一個本身就有這個屬性的元素節點上, 這個屬性就會被覆蓋掉
+        var shopping = document.getElementById("purchases");
+        alert(shopping.getAttribute("title"));
+        shopping.setAttribute("title", "a list of goods");
+        alert(shopping.getAttribute("title"));
+    </script>
+
+    <script>
+        // 在"購物清單"中, <p>元素已經有一個 title 屬性, 這個屬性的值是 a gentle reminder, 用 setAttribute 來改變它的值:
+        var paras = document.getElementsByTagName("p");
+        for (var i = 0; i < paras.length; i++) {
+            var title_text = paras[i].getAttribute("title");
+            if(title_text){
+                paras[i].setAttribute("title", "brand new title text");
+                alert(paras[i].getAttribute("title"));
+            }
+        }
+    </script>
+
+    <!-- 有一個值得關注的細節: 通過 setAttribute 對文檔做出修改后, 在通過瀏覽器的 view source(查看源代碼)選項去查看文檔的源代碼時看到的仍將是改變前的屬性值 -->
+    <!-- 也就是說, setAttribute 做出的修改不會反映在文檔本身的源代碼里. 這種表裡不一的現象源自 DOM 的工作模式: -->
+    <!-- 先加載文檔的靜態內容， 再動態刷新， 動態刷新不影響文檔的靜態內容。 這正是 DOM 的真正威力：對頁面內容進行刷新卻不需要再瀏覽器里刷新頁面 -->
+
+</body>
+
+</html>

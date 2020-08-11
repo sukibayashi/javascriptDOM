@@ -16,10 +16,25 @@
         <li class="sale important">Milk</li>
     </ul>
 
-    <script>
+    <!-- <script>
         for (var i = 0; i < document.getElementsByTagName("li").length; i++) {
             alert(typeof document.getElementsByTagName("li")[i]);
         }
+    </script> -->
+
+    <!-- 優化后 -->
+    <!-- <script>
+        var items = document.getElementsByTagName("li");
+        for(var i = 0; i < items.length; i++){
+            alert(typeof items[i]);
+        }
+    </script> -->
+
+    <!-- 透過給id=purchases命名, 再在其中用*號來查找一共有多少個object, 最後用len導出并獲得中間的數量 -->
+    <script>
+        var shopping = document.getElementById("purchases");
+        var items = shopping.getElementsByTagName("*");
+        alert(items.length);
     </script>
 </body>
 

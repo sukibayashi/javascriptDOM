@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.5.1getAttribute</title>
+</head>
+
+<body>
+    <h1>What to buy</h1>
+    <p title="a gentle reminder">Dont forget to buy this stuff.</p>
+    <p>This is just a test</p>
+    <ul id="purchases">
+        <li>A tin of beans</li>
+        <li class="sale">Cheese</li>
+        <li class="sale important">Milk</li>
+    </ul>
+
+    <script>
+        // getAttribute 是一個函數. 它只有一個參數 ---- 打算查詢的屬性的名字:
+        // object.getAttribute(attribute)
+
+        // getAttribute 方法不屬於與 document 對象, 所以不能通過document對象調用. 它只能通過元素及誒點對象調用
+        // 例如, 可以與 getElementsByTagname 方法合用, 獲取每個<p>元素的 title 屬性, 如下
+        // var paras = document.getElementsByTagName("p");
+        // for (var i=0; i < paras.length; i++){
+        //     alert(paras[i].getAttribute("title"));
+        // } 
+        // 在"購物清單"文件里只有一個p元素,並且它有title屬性.假如這份文檔有更多個p元素,並且它們沒有title屬性, getAttribute("title") 方法就會返回 null 值
+        // 在 JavaScript, null的含義是"沒有值"
+
+        // 透過修改腳本, 讓這段腳本只在 title屬性有值才彈出消息. 我們將增加一條 if 語句來檢查 getAttribute 的返回值是不是 null. 順便增加變量以提高腳本的可續性:
+        // var paras = document.getElementsByTagName("p");
+        // for (var i = 0; i < paras.length; i++){
+        //     var title_text = paras[i].getAttribute("title");
+        //     if (title_text !=null){
+        //         alert(title_text);
+        //     }
+        // }
+
+        // 將代碼縮得更短一些, 當檢查某項數據是否是 null 值時, 我們其實在檢查它是否存在
+        // 這種檢查可以簡化為直接把倍檢查的數據用作 if 語句的條件
+        // if(something) 與 if(something !=null)完全等價, 但前者顯然更為簡明. 此時, 如果 something存在, 則 if 語句的條件將為真; 如果 something 不存在, 則 if 語句的條件將為假
+        // 藉此可以把alert語句與if語句寫在同一行上, 可以讓它們更接近我們日常生活中的英語句子:
+        var paras = document.getElementsByTagName("p");
+        for (var i = 0; i < paras.length;i++){
+            var title_text = paras[i].getAttribute("title");
+            if(title_text) alert(title_text);
+        }
+    </script>
+</body>
+
+</html>

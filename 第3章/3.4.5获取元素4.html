@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.4.5获取元素4</title>
+</head>
+<body>
+    <h1>What to buy</h1>
+    <p title="a gentle reminder">Dont forget to buy this stuff.</p>
+    <ul id="purchases">
+        <li>A tin of beans</li>
+        <li class="sale">Cheese</li>
+        <li class="sale important">Milk</li>
+    </ul>
+
+
+    <script>
+        // getElementsByClassName與getElementsByTagName 方法類似, getElementByClassName 也只接受一個參數, 就是類名:
+        // getElementsByClassName(class);
+        // 利用這個方法, 就能將下面這個數組包含"sale""的所有元素顯示↓
+        
+        // 結果顯示為1, 是因為只有一個class包含了important,以及sale的類名
+        // alert(document.getElementsByClassName("important sale").length);
+
+        // 如果想知道purchases的元素中有多少類名包含"sale"類表項, 先找到特定的對象, 再調用getElementsByClassName:
+        var shopping = document.getElementById("purchases");
+        var sales = shopping.getElementsByClassName("sale");
+        // 這樣, sales數組中包含的就是只位於purchases列表中帶有sale類的元素
+        alert(sales.length);
+    </script>
+</body>
+</html>
