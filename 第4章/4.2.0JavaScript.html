@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.1.0標記</title>
+</head>
+
+<body>
+    <!-- 無序清單(<ul>): 圖片不需要按照特定順序排列 -->
+    <!-- 有序清單(<ol>): 圖片事先拍好順序 -->
+
+    <h1>Snapshots</h1>
+    <ul id="list">
+        <li>
+            <a href="./IMG/_111434468_gettyimages-1143489763.jpg" title="A fireworks display"> Fireworks</a>
+        </li>
+        <li>
+            <a href="./IMG/_111434468_gettyimages-1143489763.jpg" title="A cup of black coffee"> Coffee</a>
+        </li>
+        <li>
+            <a href="./IMG/_111434468_gettyimages-1143489763.jpg" title="A red, red rose">Rose</a>
+        </li>
+        <li>
+            <a href="./IMG/_111434468_gettyimages-1143489763.jpg" title="The famous clock"> Big Ben</a>
+        </li>
+    </ul>
+    <img id="placeholder" src="./IMG/unnamed.jpg" alt="my image gallery">
+
+    <!-- 更改"佔位符"圖片, 需要改變它的 src 屬性. setAttribute是完成這項工作的最佳選擇 -->
+    <script>
+        function showPic(whichpic) {
+            // showPic(描述函數的用途); 函數的參數命名為whichpic
+            var source = whichpic.getAttribute("href");
+            // whichpic 代表著一個元素節點, 指向某個圖片的<a>元素, 分解出圖片的文件路徑, 調用 getAttribute 得到, 再把"href"作為參數傳遞給 getAttribute 
+            var placeholder = document.getElementById("placeholder");
+            // 利用 getElementById 獲取"佔位符"的圖片, 并賦值了兩個變量(讓腳本簡明易讀)
+            placeholder.setAttribute("src", source);
+            // 對 placeholder 的 src 屬性進行設置. 第一個參數是"src"; 第二個參數 src 屬性的值, 保存在 source 變量里
+
+            // ↓這是不好的示範, ↑ 的優化使整個代碼變得十分乾淨
+            // document.getElementById("placeholder").setAttribute("src", showPic.getAttribute("herf"));
+        }
+    </script>
+</body>
+
+</html>
