@@ -31,7 +31,7 @@
     <!-- 更改"佔位符"圖片, 需要改變它的 src 屬性. setAttribute是完成這項工作的最佳選擇 -->
     <script>
         function showPic(whichpic) {
-            // showPic(描述函數的用途); 函數的參數命名為whichpic
+            // showPic(描述函數名); 函數的參數命名為whichpic
             var source = whichpic.getAttribute("href");
             // whichpic 代表著一個元素節點, 指向某個圖片的<a>元素, 分解出圖片的文件路徑, 調用 getAttribute 得到, 再把"href"作為參數傳遞給 getAttribute 
             var placeholder = document.getElementById("placeholder");

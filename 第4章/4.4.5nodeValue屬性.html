@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.4.5nodeValue屬性</title>
+</head>
+
+<body>
+    <h1>Snapshots</h1>
+    <ul>
+        <li>
+            <a href="./IMG/_111434468_gettyimages-1143489763.jpg" onclick="showPic(this); return false;"
+                title="A fireworks display"> Fireworks</a>
+        </li>
+        <li>
+            <a href="./IMG/unnamed.jpg" onclick="showPic(this); return false;" title="A cup of black coffee"> Coffee</a>
+        </li>
+        <li>
+            <a href="./IMG/_111434468_gettyimages-1143489763.jpg" onclick="showPic(this); return false;"
+                title="A red, red rose">Rose</a>
+        </li>
+        <li>
+            <a href="./IMG/unnamed.jpg" onclick="showPic(this); return false;" title="The famous clock"> Big Ben</a>
+        </li>
+    </ul>
+    <img id="placeholder" src="./IMG/unnamed.jpg" alt="my image gallery">
+    <p id="description">Chosse an image.</p>
+
+    <script>
+        // 如果想要改變一個文本節點的值, 就要使用 DOM 提供的 nodeValue 屬性, 用來得到(和設置)一個節點的值
+        // node.nodeValue
+        // 注意: 在用 nodeValue 屬性獲取 description 對象的值時, 得到的並不是包含在這個段落里的文本.
+        
+        // alert(description.nodeValue);
+        // 這個調用將返回一個 null 值. <p> 元素本身的 nodeValue 屬性是一個空值, 而你真正需要的是<p>元素所包含的文本的值
+        // 包含在<p>元素里的文本是另一種節點, 它是<p>元素的第一個子節點. 因此我們要得到的是它的第一個子節點的 nodeValue 屬性值
+        // alert(description.childNodes[0].nodeValue);
+        function showPic(whichpic) {
+            var source = whichpic.getAttribute("href");
+            var placeholder = document.getElementById("placeholder");
+            placeholder.setAttribute("src", source);
+            var text = whichpic.getAttribute('title');
+            var description = document.getElementById('description');
+        }
+        alert(description.childNodes[0].nodeValue);
+        // 這個調用的返回值才是我們正在尋找的"Choose an image". 這個值來自 childNodes 數組的第一個(下標是0)元素
+    </script>
+</body>
+
+</html>

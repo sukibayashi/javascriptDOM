@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.4.4用JavaScript改變這段描述.html</title>
+</head>
+
+<body>
+    <h1>Snapshots</h1>
+    <ul>
+        <li>
+            <a href="./IMG/_111434468_gettyimages-1143489763.jpg" onclick="showPic(this); return false;"
+                title="A fireworks display"> Fireworks</a>
+        </li>
+        <li>
+            <a href="./IMG/unnamed.jpg" onclick="showPic(this); return false;" title="A cup of black coffee"> Coffee</a>
+        </li>
+        <li>
+            <a href="./IMG/_111434468_gettyimages-1143489763.jpg" onclick="showPic(this); return false;"
+                title="A red, red rose">Rose</a>
+        </li>
+        <li>
+            <a href="./IMG/unnamed.jpg" onclick="showPic(this); return false;" title="The famous clock"> Big Ben</a>
+        </li>
+    </ul>
+    <img id="placeholder" src="./IMG/unnamed.jpg" alt="my image gallery">
+    <p id="description">Chosse an image.</p>
+
+    <script>
+        // 在圖片鏈接被點擊時, 為了能動態地用圖片的 title替換掉圖片說明, 需要對 showPic 函數進行修改
+        function showPic(whichpic) {
+            var source = whichpic.getAttribute("href");
+            var placeholder = document.getElementById("placeholder");
+            placeholder.setAttribute("src", source);
+            var text = whichpic.getAttribute('title');
+            // 獲取 whichpic 對象的 title 屬性值, 將這個值存入 text 變量. 用 getAttribute 可以輕易完成
+            var description = document.getElementById('description');
+            // 引用 id 為 description 的文本段落, 創建一個新的變量來存放
+        }
+    </script>
+</body>
+
+</html>

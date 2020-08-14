@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.4.3在標記里增加一段描述</title>
+</head>
+<body>
+    <h1>Snapshots</h1>
+    <ul>
+        <li>
+            <a href="./IMG/_111434468_gettyimages-1143489763.jpg" onclick="showPic(this); return false;" title="A fireworks display"> Fireworks</a>
+        </li>
+        <li>
+            <a href="./IMG/unnamed.jpg" onclick="showPic(this); return false;" title="A cup of black coffee"> Coffee</a>
+        </li>
+        <li>
+            <a href="./IMG/_111434468_gettyimages-1143489763.jpg" onclick="showPic(this); return false;" title="A red, red rose">Rose</a>
+        </li>
+        <li>
+            <a href="./IMG/unnamed.jpg" onclick="showPic(this); return false;" title="The famous clock"> Big Ben</a>
+        </li>
+    </ul>
+    <img id="placeholder" src="./IMG/unnamed.jpg" alt="my image gallery">
+    <p id="description">Chosse an image.</p>
+
+    <!-- 為了增強我的圖片庫函數, 決定維護一個文本節點. 其含義是, 在現實圖片時, 把這個文本節點的值替換成目標圖片鏈接的 title 的值 -->
+    <!-- 本書希望達到的效果是: 在某個圖片鏈接被點擊時, 不僅要把 "佔位符" 圖片替換為那個鏈接的 href 屬性所指向的圖片, 
+    還要把這段文本同時替換為那個圖片鏈接的 title 屬性值 -->
+
+    <script>
+        function showPic(whichpic) {
+            var source = whichpic.getAttribute("href");
+            var placeholder = document.getElementById("placeholder");
+            placeholder.setAttribute("src", source);
+        }
+    </script>
+</body>
+</html>

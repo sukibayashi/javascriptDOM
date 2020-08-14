@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.4.1childNodes屬性</title>
+</head>
+
+<body>
+    <h1>Snapshots</h1>
+    <ul>
+        <li>
+            <a href="./IMG/_111434468_gettyimages-1143489763.jpg" onclick="showPic(this); return false;"
+                title="A fireworks display"> Fireworks</a>
+        </li>
+        <li>
+            <a href="./IMG/unnamed.jpg" onclick="showPic(this); return false;" title="A cup of black coffee"> Coffee</a>
+        </li>
+        <li>
+            <a href="./IMG/_111434468_gettyimages-1143489763.jpg" onclick="showPic(this); return false;"
+                title="A red, red rose">Rose</a>
+        </li>
+        <li>
+            <a href="./IMG/unnamed.jpg" onclick="showPic(this); return false;" title="The famous clock"> Big Ben</a>
+        </li>
+    </ul>
+    <img id="placeholder" src="./IMG/unnamed.jpg" alt="my image gallery">
+
+    <!-- 在一顆節點樹上, childNodes 屬性可以用來獲取任何一個元素的所有子元素, 它是一個包含這個元素全部子元素的數組 -->
+    <!-- element.childNodes -->
+    <!-- 如果需要把某個文檔的 body 元素的全體子元素檢索出來. 首先, 我們使用 getElementsByTagName 得到 body 元素
+    因為每份文檔只有一個 body 元素, 所以它將是 getElementsByTagName("body") 方法所返回的數組中的第一個(也是唯一一個)元素: -->
+    <!-- var body_element = document.getElementsByTagName("body")[0]; -->
+
+    <!-- 變量 body_element 已經指向了那個文檔的 body 元素. 接下來, 可以用如下所表示的語法來獲取 body 元素的全體子元素: -->
+    <!-- 優化前: document.getElementsByTagName('body')[0].childNodes -->
+    <!-- 優化后: body_element.chiodNodes -->
+
+    <!-- 精確查出 body 元素的一個有多少個子元素. 因為 childNodes 屬性返回的是一個數組, 所以用數組的 length 屬性就可以知道它所包含的元素的個數: -->
+    <!-- body_element.childNodes.length; -->
+
+    <!-- 想讓函數再頁面加載時執行, 需要使用的是 onload 事件處理函數. 使用這條語句添加到代碼段末尾 -->
+    <!-- window.onload = countBodyChildren -->
+    <!-- 這條語句是再頁面加載時調用 countBodyChildren 函數, 顯示內容 body 元素的子元素的總個數 -->
+
+    <script src="./JS/showPic.js"></script>
+
+</body>
+
+</html>

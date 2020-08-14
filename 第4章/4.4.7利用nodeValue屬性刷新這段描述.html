@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.4.7利用nodeValue屬性刷新這段描述</title>
+</head>
+<body>
+    <script>
+        // 因為元素<p>只有一個子節點, 所以選用 description.firsChild 屬性和選用 description.lastChild 屬性的效果是完全一樣的
+        // alert(description.firstChild.nodeValue);
+
+        // nodeValue 屬性可以用來檢索節點的值, 還可以用來設置節點的值
+        // 現在圖片鏈接被點擊時, showPic 含稅會把這個鏈接的 title 屬性值傳遞給 text 變量. 我們這裡希望用 text 變量去
+        // 刷新id值等於 description的那個 <p> 元素的第一個子節點的 nodeValue 屬性值
+        // description.firstChild.nodeValue = text
+
+        function showPic(whichpic){
+            var source = whichpic.getAttribute("href");
+            var placeholder = document.getElementById("placeholder");
+            placeholder.setAttribute("src",source);
+            var text = whichpic.getAttribute("title");
+            // 當圖片庫頁面上的某個圖片鏈接被點擊時, 這個鏈接的 title 屬性值將會被提取并保存到 text 變量中
+            var description = document.getElementById("description");
+            // 得到 id 是"description"的<p>元素, 并把它保存到變量 description 里;
+            description.firstChild.nodeValue = text;
+            // 把 description 對象的第一個子節點的 nodeValue 屬性值設置為變量 text 的值
+        }
+    </script>
+</body>
+</html>

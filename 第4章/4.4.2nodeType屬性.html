@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.4.2nodeType屬性</title>
+</head>
+<body>
+    <!-- 根據剛剛的文件的結構, body 元素應該只有3個子元素: 一個 h1 元素 / 一個 ul 元素 和一個 img 元素.
+    可是, countBodyChildren()函數給出的數字卻遠大於此, 這是因為文檔樹的節點類型並非只有元素節點一種 -->
+    <!-- 由於 children 屬性返回的數組包含了所有類型的節點， 而不僅僅是元素節點。 事實上， 文檔里幾乎每一樣東西都是一個節點，
+    甚至連空格和換行符都會被解釋為節點， 而他們也都包含在了childNodes 屬性說返回的數組當中 -->
+    <!-- 這也是為什麼 countBodyChildren 的返回結果才會這麼大 -->
+
+    <!-- 幸運的是, 每一個節點都有 nodeType 屬性. 這個屬性可以讓我們知道自己正在和哪一種節點打交道, 差勁的是 nodeType 的值並不是英文 -->
+    <!-- node.nodeType -->
+    <!-- nodeType 的值是一個數字而不是像 "element" 或 "attribute" 那樣的英文字符串 -->
+    <!-- 替換 alert 語句來知道 body_element 元素的 nodeType 屬性 -->
+    <!-- alert(body_element.nodeType) -->
+
+
+    <!-- 刷新 web瀏覽器后, 得到的元素節點 nodeType 屬性值是1 -->
+    <!-- nodeType 屬性總共有 12 種 可取值, 但其中 3 種最具有實用價值 -->
+    <!-- 元素節點的 nodeType 屬性值是 1 -->
+    <!-- 屬性節點的 nodeType 屬性值是 2 -->
+    <!-- 文本節點的 nodeType 屬性值是 3 -->
+    <!-- 意味著, 可以讓函數只對特定類型的節點進行處理. 例如, 完全可以編寫出一個只處理元素節點的函數 -->
+</body>
+</html>

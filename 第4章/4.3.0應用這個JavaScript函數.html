@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.3.0應用這個JavaScript函數</title>
+</head>
+<body>
+    <h1>Snapshots</h1>
+    <ul>
+        <li>
+            <a href="./IMG/_111434468_gettyimages-1143489763.jpg" onclick="showPic(this); return false;" title="A fireworks display"> Fireworks</a>
+        </li>
+        <li>
+            <a href="./IMG/unnamed.jpg" onclick="showPic(this); return false;" title="A cup of black coffee"> Coffee</a>
+        </li>
+        <li>
+            <a href="./IMG/_111434468_gettyimages-1143489763.jpg" onclick="showPic(this); return false;" title="A red, red rose">Rose</a>
+        </li>
+        <li>
+            <a href="./IMG/unnamed.jpg" onclick="showPic(this); return false;" title="The famous clock"> Big Ben</a>
+        </li>
+    </ul>
+    <img id="placeholder" src="./IMG/unnamed.jpg" alt="my image gallery">
+
+
+    <!-- 若一個站點用到多個 JavaScript 文件, 為了減少對站點的請求次數(提高性能), 應該把這些 .js文件合併到一個文件中. -->
+    <!-- 就像把圖片存放在 images 子目錄那樣, 把所有的 JavaScript 腳本集中存放在一個子目錄里也是一個好的習慣 -->
+    <!-- 最後, 再用 script src 語法把它插入回 html 中 -->
+    <!-- 但光是這樣, showPic 函數永遠不會被調用, 需要為圖片列表鏈接添加行為, 也就是事件處理函數 (event handler), 才能達成目標 -->
+  
+
+    <!-- 事件處理函數 -->
+    <!-- 事件處理函數的作用是, 在特定事件發生時調用特定的 JavaScript 代碼. 例如, 在鼠標指針懸停在某個元素時觸發一個動作, 就需要使用 onmouseover 事件處理函數;
+    如果想在鼠標指針離開某個元素時觸發一個動作, 就需要使用 onemouseout 事件處理函數. 在這次的 JavaScript 事件中, 想用戶在點擊某個鏈接時觸發一個動作,
+    所以需要使用 onclick 事件處理函數 -->
+    <!-- 需要注意的是 showPic()函數需要一個參數: 一個帶有 href 屬性的元素節點的參數. 當 onclick 事件處理函數嵌入到一個連接中時, 需要把這個鏈接本身用作 showPic 函數的參數 -->
+    
+    <!-- 一個非常簡單有效的辦法可以做到這一點: 使用 this 關鍵詞. 這個關鍵詞在這個地方的含義是 "這個對象". this 表示 "這個<a>元素節點": -->
+    <!-- showPic(shis) --> 
+    <!-- onclick 事件處理函數來給鏈接添加行為, 添加時間處理函數的語法如下表示 -->
+    <!-- event = "JavaScript statement(s)" -->
+    <!-- ↑ JavaScript代碼包含在一對引號之間, 把任意數量的 JavaScript 語法放在這對引號之間, 只需要把各條語句用分號隔開即可 -->
+    
+    <!-- 下面即是調用 showPic 的方法 -->
+    <!-- onclick = "showPic(this);" -->
+
+    <!-- 但如果僅僅把事件處理函數放到圖片列表的一個連接中, 我們仍然會遇到一個問題: 點擊這個鏈接時, 不僅 showPic(函數) 被調用, 鏈接本身被點擊的默認行為也會被調用. 
+    意味著用戶還是會被帶到圖片查看窗口, 所以要阻止這個默認行為被調用 -->
+    <!-- 所以只需要在 onclick 事件處理函數所觸發的 JavaScript 代碼里增加一條 return false 語句, 就可以防止用戶被帶到目標鏈接窗口 -->
+    <!-- onclick = "showPic(this); return false;" -->
+
+    <script type="text/javascript" src="./JS/showPic.js"></script>
+</body>
+</html>

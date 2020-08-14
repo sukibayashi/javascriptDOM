@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.4.6firstChild和lastChild屬性</title>
+</head>
+<body>
+    <!-- 數組元素 childNodes[0]有個更直觀易讀的同義詞. 需要訪問 childNodes 數組的第一個元素, 都可以把它寫成 firstChild: -->
+    <!-- node.firstChild -->
+    <!-- 這種寫法與下面的寫法完全等價,不僅更簡短還具有可讀性 -->
+    <!-- node.childNodes[0] -->
+
+    <!-- DOM還提供了一個與之對應的 lastChild 屬性 -->
+    <!-- node.lastChild -->
+    <!-- 這代表 childNOdes 數組的最後一個元素, 如果不想用 lastChild 屬性去訪問這個節點, 舊不得不使用以下語法 -->
+    <!-- node.childNodes[node.childNodes.length-1] -->
+    <!-- 與簡明易懂的 lastChild 相比, 應該沒有人會喜歡這麼複雜的語法標記 -->
+</body>
+</html>
