@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.2.1javascript偽協議</title>
+</head>
+<body>
+    <!-- javascript偽協議(pseudo-protoco;) -->
+
+    <!-- "真"協議用來在因特網上的計算機之間傳輸數據包, 如 HTTP 協議(http://), FTP 協議(ftp://)等,
+    偽協議則是一種非標準化的協議. "JavaScript:"偽協議讓我們通過一個連接來調用 JavaScript 函數 -->
+
+    <!-- 下面是通過 "javascript:" 偽協議調用 popUp() 函數的具體做法: -->
+    <a href="javascript:popUp('http://www.baidu.com/');">Example</a>
+
+    <script>
+        function popUP(winURL){
+            window.open(winURL,"popup","width=320, height=480")
+        }
+    </script>
+
+</body>
+</html>

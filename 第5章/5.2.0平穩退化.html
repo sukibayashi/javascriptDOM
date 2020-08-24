@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.2.0平穩退化</title>
+</head>
+<body>
+    <script>
+        // 在絕對必要的情況下才使用彈出窗口, JavaScript 使用 Window 對象的open()方法來創建新的瀏覽器
+
+        // window.open(url, name, features)
+
+        // 第一個參數是想在新窗口裡打開的 URL 地址
+        // 第二個參數是新窗口的名字。 可以在代碼裡通過這個名字與新窗口進行通信
+        // 最後一個參數以逗號分隔的字符串， 其內容是新窗口的各種屬性。 這個屬性包括了新窗口的尺寸（寬度和高度）以及新窗口被啟用或禁用的各種瀏覽器功能
+    </script>
+
+    <script>
+        function popUP(winURL){
+            window.open(winURL,"popup","width=320, height=480")
+        }
+    </script>
+</body>
+</html>
