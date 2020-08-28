@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.6.3壓縮腳本</title>
+</head>
+
+<body>
+    <!-- 在寫完了腳本, 做了優化, 而且也將它放到文檔中的適當位置之後, 還有一件事可以加快加載速度: 壓縮腳本文件 -->
+    <!-- 所謂壓縮腳本, 指的是把 腳本中不要的直接, 如空格和注釋, 統統刪除, 從而達到"壓縮"文件的目的 -->
+    <!-- 現在有許多工具都可以帶你來做這些事. 有的精簡程序甚至會重寫你的部分, 使用更短的變量名, 從而減少整體文本的文件大小 -->
+
+
+    <script>
+        function showPic(whichpic) {
+            var source = whichpic.getaAttribute("href");
+            // 取得圖片的 href屬性
+            var placehlder = document.getElementById("placeholder");
+            // 取得佔位符
+            placehlder.setAttribute("src", source);
+            // 更新佔位符
+            var text = whichpic.getaAttribute("title");
+            // 使用圖像的 title 屬性更新文本描述
+            var description = document.getElementById("description");
+        }
+    </script>
+
+    <!-- 壓縮後 -->
+    <script>
+        function showPic(a) { var b = a.getaAttribute("href"); document.getElementById("placeholder").setAttribute("src,b"); a.getaAttribute("title"); document.getElementById("description") };
+    </script>
+
+    <!-- 精簡後的代碼雖然不容易看懂, 卻能大幅度減少文件大小. 多數情況, 你應該有兩個版本, 一個是副本, 可以修改代碼並添加註釋;另一個是精簡副本, 用於放在站點上. 通常為了與非精簡版本分開, 最好在精簡副本的文件名上加上min字樣 -->
+    <!-- 
+        <script src="scripts/scriptName.min.js"></script>
+     -->
+
+    <!-- 幾個代表性的代碼壓縮工具 -->
+    <!-- Douglas Crockford 的 JSMin -->
+    <a href="http://www.crockford.com/javascript/jsmin.html"></a>
+    <!-- 谷歌的 Closure Compiler -->
+    <a href="http://closure-compiler.appspot.com/home"></a>
+</body>
+
+</html>

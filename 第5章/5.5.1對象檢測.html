@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.5.1對象檢測</title>
+</head>
+<body>
+    <!-- 檢測瀏覽器對 JavaScript 的支持程度 -->
+    <!-- 需要在 DOM 腳本裡表達"你需要理解這麼多 JavaScript 語言才能執行這些語句" -->
+    <!-- 只要把某個方法打包在一個 if 語句裡, 就可以根據這條 if 語句的條件表達式的求職結果是 true (這個方法存在) 還是 false (這個方法不存在)來
+    決定應該採取怎樣的行動. 這種檢測稱為對象檢測 (object detection).  -->
+    <!-- if(method){
+        statements
+    } -->
+
+    <!-- 如果使用了 getElementById()方法的函數, 就可以調用 getElementById() 方法之前先檢查用戶所使用的瀏覽器是否支持這個方法.
+    在使用對象檢測是, 一定要刪掉方法名後面的圓括號, 如果不刪掉, 測試的將是方法的結果, 無論方法是否存在 -->
+    <!-- function myFunction(){
+        if (document.getElementById){
+            statements using getElementById
+        }
+    } -->
+    <!-- 因此, 如果某個瀏覽器不支持 getElementById()方法, 它就永遠也不會執行使用此方法的語句. -->
+
+    <!-- 如果把測試掉件從"如果你理解..." 改為"如果你不理解...", 需要使用"邏輯非"操作符, 這個操作符在 JavaScript 語言裡表示為一個驚歎號: -->
+    <!-- if(!method) -->
+    <!-- 測試條件中的"....請離開" 可以使用 return 語句來實現. 因為這相當於中途退出函數, 所以讓它返回布爾值 false 比較貼切,
+    所以用來測試 getElementById 是否存在的語句如下: -->
+    <!-- if(!getElementById){
+        return false;
+    } -->
+    <!-- 又因為, 花括號部分只有 return false 一條語句, 更可以簡寫成一行: -->
+    <!-- if(!getElementById) return false; -->
+
+    <!-- 如果需要測試多個方法或屬性是否存在, 可以用"邏輯或" 操作符將其合併. 這個操作符在 JavaScript 語言裡表示為兩個豎線符號: -->
+    <!-- if(!getElementById || !getElementsByTagName) return false; -->
+    <!-- "如果你不理解 getElementById 和 getElementsByTagName, 你就不能參加這項遊樂活動" -->
+
+
+    <!-- 按照這一思路, 再用來把 onclick 事件添加到鏈接上去的網頁加載腳本裡插入一條 if 語句. 那個腳本使用了 getElementsByTagName, 所以需要
+    插入一條 if 語句去檢查瀏覽器是否理解了這個方法 -->
+    <script>
+        window.onload = function(){
+            if (!document.getElementsByTagName) return false;
+            // 雖然只是一條簡單的 if 語句, 但它可以確保那些"古老的"瀏覽器不會因為我的腳本代碼而出現問題.
+            // 這麼做為的是讓腳本有良好的向後兼容性. 因為我在給網頁添加各有關行為時始終遵循了 "漸進增強" 的原則,
+            // 可以確切地知道我添加的那些都能平穩退化, 我的網頁在那些"古老的" 瀏覽器裡也能正常瀏覽(). 那些只支持一本份
+            // JavaScript 功能但不支持 DOM 的瀏覽器仍然可以訪問我的網頁內容.
+            var links = document.getElementsByTagName("a");
+            for (var i=0; i<links.length; i++){
+                links[i].onclick = function(){
+                    popUp(this.getAttribute("href"));
+                    return false;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

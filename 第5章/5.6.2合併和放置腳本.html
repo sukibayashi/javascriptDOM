@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.6.2合併和放置腳本</title>
+</head>
+<body>
+    <!-- 透過使用外部腳本文件, 在文檔中通過<script>元素把它們包含進來 -->
+    <!-- 
+        <script scr="srcipt/fuction.js"></script>
+     -->
+
+     <!-- 包含腳本的最佳方式就是使用外部文件, 因為外部文件與標記能清晰地分離開, 而且瀏覽器也能對站點中的多個頁面
+    重用緩存過的相同腳本. -->
+    <script scr="srcipt/fuctionA.js"></script>
+    <script scr="srcipt/fuctionB.js"></script>
+    <script scr="srcipt/fuctionC.js"></script>
+    <!-- 不過最推薦的做法是, 把A,B,C 合併到同一個腳本. 這樣減少頁面時發送的請求數量, 而減少請求數量通常是在性能
+    優化時首先要考慮的. -->
+    <!-- 腳本在標記中的位置對網頁初次加載時間也有很大的影響. 傳統上, 我們都把腳本放在文檔的<head>區域, 放置在著有一個問題.
+    位於<head>塊中的腳本會導致瀏覽器無法並行家在其他文件. -->
+
+     <!-- 而按照文章前面討論漸進增強和分離 JavaScript 觀點, 把<script>標籤放到別的地方並不是問題. 把所有<script>標籤都放在末尾, </body>標記之前, 就可以讓頁面
+    變得更快. 即使這樣, 在加載腳本時, window 對象的 load 事件依然可以執行對文檔進行的各種操作. --> 
+</body>
+</html>

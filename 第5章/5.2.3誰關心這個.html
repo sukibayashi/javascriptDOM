@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.2.3誰關心這個</title>
+</head>
+<body>
+    <!-- JavaScript的"平穩退化": 讓那些不支持或禁用 JavaScript 功能的瀏覽器也能恩順利地訪問 -->
+    <!-- 搜索機器人(searchbot) ,是一種自動化的程序,它們瀏覽 web的目的是為了把各種網頁添加到搜索引擎的數據裡-->
+    <!-- 各大搜索引擎都有類似的程序。 只有極少數搜索引擎能夠理解 JavaScript 代碼. 
+         如果你的 JavaScript 網頁不能平穩退化, 它們在搜索引擎上的排名就可能大受損害 -->
+
+         <a href="http://www.baidu.com" onclick="popUp('https://www.baidu.com'; return false;"></a>
+
+         <script>
+            //  具體到popUp(), 為其中的 JavaScript 代碼預留出退路很簡單: 在鏈接裡把 href 屬性設置為真實存在的 url
+            
+         </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5.4.0分離JavaScript</title>
+</head>
+
+<body>
+    <a href="javascript:popUp('http://www.baidu.com/');">Example</a>
+
+    <!-- 類似使用 style 屬性, 在 HTML 文檔裡使用諸如 onclick 之類的屬性也是一種既沒有效率又容易引發問題的做法. 如果我們用一個"掛鉤",
+    就像 CSS 機制中的 class 或 id 屬性那樣, 把 JavaScript 代碼調用行為與 HTML 文檔的結構和內容分離開, 網頁就會健壯的多. -->
+    <!-- 如何在下面這個鏈接被點擊時, 它將調用 popUP(函數)呢? -->
+
+    <!-- JavaScript 語言不要求事件不需要再 HTML 文檔裡處理, 我們可以在外部 JavaScript 文件裡把一個事件添加到 HTML 文檔中的某個元素上: -->
+    <!-- element.event = action -->
+    <!-- 利用 class 或 id 屬性來把這個事件的元素給確定 -->
+    <!-- 如果想把一個事件添加到某個帶有特定 id 屬性的元素上, 用 getElementById 就可以解決問題: -->
+      
+    <!-- getElementById(id).event = action -->
+
+    <!-- 如果事情涉及及多個元素, 我們可以用 getElementsByTagName 和 getAttribute 把事件添加到有著特定屬性的一組元素上 -->
+    <!-- <script>
+        var links = document.getElementsByTagName("a");
+        // 把文檔裡的所有連接全放入一個數組裡, 遍歷數組, 找到 a 這個元素
+        for (var i = 0; i < links.item; i++) {
+            if (links[i].getAttribute("class") == "popup") {
+                // 某個鏈接的 class 屬性等於 popup, 就表示這個鏈接在被點擊時應該調用 popUp()函數
+                links[i].onclick = function () {
+                    popUp(this.getAttribute("href"));
+                    // 把這個鏈接的 href 屬性值傳遞給 popUp()函數;
+                    return false;
+                    // 取消這個鏈接的某人行為, 不然這個鏈接吧訪問者帶離
+                }
+            }
+        }
+    </script> -->
+    <!-- 以上代碼將把調用 popUP()函數的 onclick 事件添加到有關的連接上. 只要把它們存入一個外部 JavaScript 文件, 就等於把這些操作從
+    HTML 文檔裡分離出來了. 這就是"分離 JavaScript"的含義 -->
+    <!-- 但還有一個問題需要解決, 如果把這段代碼存入外部 JavaScript 文件, 它們將無法正常運行↓ -->
+    <!-- var links = document.getElementsByTagName("a"); -->
+    <!-- 這條語句將在 JavaScript 文件被加載時立刻執行. 如果JavaScript 文件是從文檔的<head> 部分用 <script> 標籤調用的, 它將在 HTML 文檔加載前,
+    就加載到瀏覽器裡. 同樣, 如果<script>標籤位於文檔底部</body>前, 就不能保證哪個文件最先結束加載(瀏覽器可能一次加載多個). 因為腳本加載時,
+    文檔可能不完整, 所以模型也不完整. 沒有完整的 DOM, getElementsByTagName 等方法就不能正常工作 -->
+
+    <!-- 所以, 必須讓這些代碼在 HTML 文檔全部加載到瀏覽器之後馬上開始執行. HTML 文檔全部加載完畢將觸發一個時間, 這個事件有它自己的事件處理函數. -->
+    <!-- 文檔將被加載到一個瀏覽器窗口裡, document 對象又是 window 對象的屬性. 當 window 對象觸發 onload 事件時, document 對象已經存在 -->
+
+    <!-- <script>
+        function popUP(winURL){
+            window.open(winURL, "popup","width=320, height=480");
+        }
+    </script> -->
+    <script src="./JS/prepareLinks.js"></script>
+</body>
+
+</html>
